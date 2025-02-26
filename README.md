@@ -87,6 +87,7 @@ orin@orin-desktop:~/deepstream_test5$ ls
  sample_720p.mp4  # sample stream
  test5_dec_infer-resnet_tracker_sgie_tiled_display_int8.txt
  traffic.mp4    #
+ ```
 orin@ubuntu:~/deepstream_test5$ /usr/local/bin/yt-dlp -f 'bestvideo[height<=720]+bestaudio' https://www.youtube.com/watch?v=DF51C88xJ6E -o street_traffic.mp4
 ```
 <b>
