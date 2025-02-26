@@ -5,7 +5,9 @@ https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinf
 1. deepstream-7.1 설치
       1-1. sdkmanager
       1-2.  deepstream_sdk_v7.1.0 다운로드 링크.
+   ``` bash
             https://catalog.ngc.nvidia.com/orgs/nvidia/resources/deepstream/files
+   ```
       1-3.  orin@ubuntu:~/Downloads$ ls
             deepstream_sdk_v7.1.0_jetson.tbz2
 
