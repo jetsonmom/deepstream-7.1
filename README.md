@@ -3,6 +3,7 @@
 ######  결과 영상
 https://youtu.be/R8TKoVCnO1A
 
+######  참고 링크
 https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinfer.html
  
 1. deepstream-7.1 설치
