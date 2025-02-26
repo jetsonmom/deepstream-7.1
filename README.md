@@ -374,7 +374,74 @@ deepstream-app -c test5_dec_infer-resnet_tracker_sgie_tiled_display_int8.txt
 - 구성 파일의 매개변수 변경으로 세부 조정
 ## 8. ntron
 
+## 9. onnx
 
+ONNX(Open Neural Network Exchange)는 다양한 머신러닝 프레임워크 간에 모델을 교환하기 위한 개방형 표준 형식입니다. 주요 특징과 기능은 다음과 같습니다:
+
+### ONNX의 핵심 개념
+
+1. **상호 운용성(Interoperability)**
+   - 서로 다른 프레임워크(PyTorch, TensorFlow, MXNet 등) 간에 모델을 변환하고 공유할 수 있습니다.
+   - 한 프레임워크에서 훈련한 모델을 다른 프레임워크에서 추론에 사용 가능합니다.
+
+2. **표준화된 모델 표현**
+   - 모델의 계산 그래프를 표준화된 방식으로 정의합니다.
+   - 연산자, 데이터 유형, 모델 메타데이터 등을 포함합니다.
+
+3. **최적화 및 배포**
+   - 추론 엔진과 하드웨어 가속기에 최적화된 배포를 지원합니다.
+   - 모바일 기기, 엣지 디바이스, 클라우드 서비스 등 다양한 환경에 활용됩니다.
+
+### ONNX의 활용
+
+1. **모델 변환**
+   ```python
+   # PyTorch에서 ONNX로 모델 변환 예시
+   import torch
+   import torchvision
+   
+   model = torchvision.models.resnet50(pretrained=True)
+   dummy_input = torch.randn(1, 3, 224, 224)
+   
+   torch.onnx.export(model, dummy_input, "resnet50.onnx", 
+                     opset_version=11, 
+                     input_names=["input"], 
+                     output_names=["output"])
+   ```
+
+2. **ONNX 모델 로드 및 추론**
+   ```python
+   import onnxruntime as ort
+   
+   # ONNX 모델 로드
+   session = ort.InferenceSession("resnet50.onnx")
+   
+   # 추론 실행
+   input_name = session.get_inputs()[0].name
+   output_name = session.get_outputs()[0].name
+   result = session.run([output_name], {input_name: input_data_numpy})
+   ```
+
+3. **ONNX Runtime**
+   - Microsoft에서 개발한 고성능 추론 엔진
+   - CPU, GPU, DirectML, TensorRT 등 다양한 하드웨어 백엔드 지원
+   - 모델 최적화 및 양자화 기능 제공
+
+### ONNX 지원 프레임워크 및 도구
+
+- **훈련 프레임워크**: PyTorch, TensorFlow, MXNet, Keras, Scikit-learn 등
+- **추론 엔진**: ONNX Runtime, TensorRT, OpenVINO, CoreML 등
+- **하드웨어 가속**: NVIDIA GPU, Intel CPU/GPU, ARM, 모바일 프로세서 등
+
+### Jetson Orin에서의 ONNX 활용
+
+NVIDIA Jetson Orin에서는 ONNX 모델을 다음과 같이 활용할 수 있습니다:
+
+1. **TensorRT 변환**: ONNX 모델을 TensorRT 엔진으로 변환하여 Jetson의 GPU에서 최적화된 추론 성능을 얻을 수 있습니다.
+2. **DeepStream 통합**: NVIDIA DeepStream SDK와 통합하여 실시간 비디오 분석 파이프라인 구축이 가능합니다.
+3. **Triton Inference Server**: 앞서 언급한 triton_tao_model_repo를 통해 ONNX 모델을 서빙할 수 있습니다.
+
+ONNX는 모델 개발과 배포 과정을 단순화하고, 다양한 환경에서 일관된 추론 결과를 얻을 수 있도록 돕는 중요한 도구입니다.
 orin@orin-desktop:~/deepstream_test5$ netron /home/orin/deepstream_test2/models/Secondary_VehicleMake/resnet18_vehiclemakenet_pruned.onnx
 
 ![Screenshot from 2025-02-26 14-58-19](https://github.com/user-attachments/assets/cc859dfa-a4cd-467d-aee9-e444918efbae)
