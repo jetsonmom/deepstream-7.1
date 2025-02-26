@@ -8,7 +8,8 @@ https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinf
       1-3.  orin@ubuntu:~/Downloads$ ls
             deepstream_sdk_v7.1.0_jetson.tbz2
 
-            orin@ubuntu:~/Downloads$ cd /opt/nvidia/
+ ``` bash
+           orin@ubuntu:~/Downloads$ cd /opt/nvidia/
             orin@ubuntu:/opt/nvidia$ 
             orin@ubuntu:/opt/nvidia$ sudo tar -xvf ~/Downloads/deepstream_sdk_v7.1.0_jetson.tbz2
 
@@ -27,7 +28,7 @@ https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinf
             orin@orin-desktop:/opt/nvidia/deepstream/deepstream-7.1$ sudo ./install.sh
             orin@orin-desktop:/opt/nvidia/deepstream/deepstream-7.1$ sudo ldconfig
             
-            ```
+          
             sudo apt install \
 libssl3 \
 libssl-dev \
@@ -41,4 +42,4 @@ libgstreamer-plugins-base1.0-dev \
 libgstrtspserver-1.0-0 \
 libjansson4 \
 libyaml-cpp-dev
-            ```
+```
