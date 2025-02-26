@@ -61,7 +61,9 @@ orin@ubuntu:~$ which yt-dlp
 /usr/local/bin/yt-dlp
 ```
  2. 환경 준비. 나는 nvidia자료에 있는 sample영상으로 사용했음.
+    
 deepstream_test5폴더를 만들어서 진행
+
 ``` bash
 orin@orin-desktop:~$ mkdir deepstream_test5
 orin@orin-desktop:~/deepstream_test5$ cp /opt/nvidia/deepstream/deepstream-7.1/samples/streams/sample_720p.mp4 .
@@ -73,9 +75,13 @@ orin@ubuntu:~/deepstream_test5$ /usr/local/bin/yt-dlp -U
 ```
 Latest version: stable@2025.02.19 from yt-dlp/yt-dlp
 yt-dlp is up to date (stable@2025.02.19 from yt-dlp/yt-dlp)
+
+``` bash
 orin@ubuntu:~/deepstream_test5$ /usr/local/bin/yt-dlp --version
-2025.02.19
 ```
+2025.02.19
+
+``` bash
 orin@orin-desktop:~/deepstream_test5$ ls
 ```
  config_infer_primary.txt
@@ -91,10 +97,11 @@ orin@orin-desktop:~/deepstream_test5$ ls
  sample_720p.mp4  # sample stream
  test5_dec_infer-resnet_tracker_sgie_tiled_display_int8.txt
  traffic.mp4    #
- ```
+ 
+ ``` bash
 orin@ubuntu:~/deepstream_test5$ /usr/local/bin/yt-dlp -f 'bestvideo[height<=720]+bestaudio' https://www.youtube.com/watch?v=DF51C88xJ6E -o street_traffic.mp4
 ```
-<b>
+
 [youtube] Extracting URL: https://www.youtube.com/watch?v=DF51C88xJ6E
 [youtube] DF51C88xJ6E: Downloading webpage
 [youtube] DF51C88xJ6E: Downloading tv client config
@@ -115,7 +122,9 @@ Deleting original file street_traffic.f140.m4a (pass -k to keep)
 orin@ubuntu:~/deepstream_test5$ ls
 ```
 street_traffic.mp4
+
  3. TensorRT 엔진 만들기
+    
 주의할 점 
 batch-size를 통일해준다. 여기서는 b16으로 해주었다.
 ![Screenshot from 2025-02-26 14-30-28](https://github.com/user-attachments/assets/9d79729a-49b5-496b-844f-3c922ad034a9)
