@@ -30,19 +30,19 @@ https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinf
 
             orin@orin-desktop:/opt/nvidia/deepstream/deepstream-7.1$ sudo ./install.sh
             orin@orin-desktop:/opt/nvidia/deepstream/deepstream-7.1$ sudo ldconfig
-            
-          
-sudo apt install \
-libssl3 \
-libssl-dev \
-libgstreamer1.0-0 \
-gstreamer1.0-tools \
-gstreamer1.0-plugins-good \
-gstreamer1.0-plugins-bad \
-gstreamer1.0-plugins-ugly \
-gstreamer1.0-libav \
-libgstreamer-plugins-base1.0-dev \
-libgstrtspserver-1.0-0 \
-libjansson4 \
-libyaml-cpp-dev
+```            
+``` bash          
+            sudo apt install \
+            libssl3 \
+            libssl-dev \
+            libgstreamer1.0-0 \
+            gstreamer1.0-tools \
+            gstreamer1.0-plugins-good \
+            gstreamer1.0-plugins-bad \
+            gstreamer1.0-plugins-ugly \
+            gstreamer1.0-libav \
+            libgstreamer-plugins-base1.0-dev \
+            libgstrtspserver-1.0-0 \
+            libjansson4 \
+            libyaml-cpp-dev
 ```
