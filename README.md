@@ -146,7 +146,7 @@ display-tracking-id=1
 user-meta-pool-size=512  # 이 값을 추가 (기본값은 일반적으로 더 작음)
 ```
 ```
-orin@orin-desktop:~/deepstream_test5$ deepstream-app -c test5_dec_infer-resnet_tracker_sgie_tiled_display_int8.txt
+orin@orin-desktop:~/deepstream_test5$ deepstream-app -c test5_dec_infer-resnet_tracker_sgie_tiled_display_int8.txt  
 
 ```
 <b>  실행 결과
