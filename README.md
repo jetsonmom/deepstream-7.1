@@ -133,7 +133,18 @@ orin@orin-desktop:~/deepstream_test5$ /usr/src/tensorrt/bin/trtexec --onnx=/home
 
 ```
 
-<b> 실행하기
+<b> 실행하기  인식이 잘 안되면 임계값을 낮춰준다. 그리고 buffer size pool이 default가 작으므로 tracker 섹션 user-meta-pool-size 추가
+```
+[tracker]
+enable=1
+tracker-width=960
+tracker-height=544
+ll-lib-file=/opt/nvidia/deepstream/deepstream/lib/libnvds_nvmultiobjecttracker.so
+ll-config-file=../../../../../samples/configs/deepstream-app/config_tracker_NvDCF_perf.yml
+gpu-id=0
+display-tracking-id=1
+user-meta-pool-size=512  # 이 값을 추가 (기본값은 일반적으로 더 작음)
+```
 ```
 orin@orin-desktop:~/deepstream_test5$ deepstream-app -c test5_dec_infer-resnet_tracker_sgie_tiled_display_int8.txt
 
