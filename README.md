@@ -6,7 +6,7 @@ https://youtu.be/R8TKoVCnO1A
  참고 링크
 https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinfer.html
  
-###### 1. deepstream-7.1 설치
+ 1. deepstream-7.1 설치
    
    1-1. sdkmanager.
    
@@ -60,7 +60,7 @@ orin@ubuntu:~$ pip3 install yt-dlp
 orin@ubuntu:~$ which yt-dlp
 /usr/local/bin/yt-dlp
 ```
-######  2. 환경 준비. 나는 nvidia자료에 있는 sample영상으로 사용했음.
+ 2. 환경 준비. 나는 nvidia자료에 있는 sample영상으로 사용했음.
 deepstream_test5폴더를 만들어서 진행
 ``` bash
 orin@orin-desktop:~$ mkdir deepstream_test5
@@ -115,7 +115,7 @@ Deleting original file street_traffic.f140.m4a (pass -k to keep)
 orin@ubuntu:~/deepstream_test5$ ls
 ```
 street_traffic.mp4
-###### 3. TensorRT 엔진 만들기
+ 3. TensorRT 엔진 만들기
 주의할 점 
 batch-size를 통일해준다. 여기서는 b16으로 해주었다.
 ![Screenshot from 2025-02-26 14-30-28](https://github.com/user-attachments/assets/9d79729a-49b5-496b-844f-3c922ad034a9)
