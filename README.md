@@ -60,7 +60,7 @@ orin@ubuntu:~$ pip3 install yt-dlp
 orin@ubuntu:~$ which yt-dlp
 /usr/local/bin/yt-dlp
 ```
-<b>  2. 환경 준비. 나는 nvidia자료에 있는 sample영상으로 사용했음.
+  2. 환경 준비. 나는 nvidia자료에 있는 sample영상으로 사용했음.
 deepstream_test5폴더를 만들어서 진행
 ``` bash
 orin@orin-desktop:~$ mkdir deepstream_test5
