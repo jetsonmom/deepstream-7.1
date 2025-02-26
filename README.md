@@ -6,7 +6,7 @@ https://youtu.be/R8TKoVCnO1A
  참고 링크
 https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinfer.html
  
-1. deepstream-7.1 설치
+###### 1. deepstream-7.1 설치
    
    1-1. sdkmanager.
    
@@ -60,7 +60,7 @@ orin@ubuntu:~$ pip3 install yt-dlp
 orin@ubuntu:~$ which yt-dlp
 /usr/local/bin/yt-dlp
 ```
-  2. 환경 준비. 나는 nvidia자료에 있는 sample영상으로 사용했음.
+######  2. 환경 준비. 나는 nvidia자료에 있는 sample영상으로 사용했음.
 deepstream_test5폴더를 만들어서 진행
 ``` bash
 orin@orin-desktop:~$ mkdir deepstream_test5
@@ -115,7 +115,7 @@ Deleting original file street_traffic.f140.m4a (pass -k to keep)
 orin@ubuntu:~/deepstream_test5$ ls
 ```
 street_traffic.mp4
-<b> 3. TensorRT 엔진 만들기
+###### 3. TensorRT 엔진 만들기
 주의할 점 
 batch-size를 통일해준다. 여기서는 b16으로 해주었다.
 ![Screenshot from 2025-02-26 14-30-28](https://github.com/user-attachments/assets/9d79729a-49b5-496b-844f-3c922ad034a9)
@@ -133,7 +133,7 @@ orin@orin-desktop:~/deepstream_test5$ /usr/src/tensorrt/bin/trtexec --onnx=/home
 
 ```
 
-<b> 실행하기  인식이 잘 안되면 임계값을 낮춰준다. 그리고 buffer size pool이 default가 작으므로 tracker 섹션 user-meta-pool-size 추가
+ 실행하기  인식이 잘 안되면 임계값을 낮춰준다. 그리고 buffer size pool이 default가 작으므로 tracker 섹션 user-meta-pool-size 추가
 ```
 [tracker]
 enable=1
@@ -149,7 +149,7 @@ user-meta-pool-size=512  # 이 값을 추가 (기본값은 일반적으로 더 �
 orin@orin-desktop:~/deepstream_test5$ deepstream-app -c test5_dec_infer-resnet_tracker_sgie_tiled_display_int8.txt  
 
 ```
-<b>  실행 결과
+  실행 결과
 desktop:~/deepstream_test5$ deepstream-app -c test5_dec_infer-resnet_tracker_sgie_tiled_display_int8.txt
 
 (gst-plugin-scanner:9332): GStreamer-WARNING **: 13:05:07.965: Failed to load plugin '/opt/nvidia/deepstream/deepstream/lib/gst-plugins/libnvdsgst_udp.so': librivermax.so.0: cannot open shared object file: No such file or directory
@@ -222,7 +222,7 @@ App run successful
 orin@orin-desktop:~/deepstream_test5$ 
 
 
-<b>
+
 [secondary-gie0] enable=1
 → 이 옵션은 secondary-gie0 섹션에 정의된 Secondary GIE(추론 엔진)를 활성화하는 역할을 합니다.
 즉, 이 플러그인을 파이프라인에 포함시켜 실행하겠다는 의미입니다.
