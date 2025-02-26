@@ -153,3 +153,5 @@ orin@orin-desktop:~/deepstream_test5$ /usr/src/tensorrt/bin/trtexec --onnx=/home
 
 
 
+
+
