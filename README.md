@@ -48,3 +48,66 @@ https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinf
             libjansson4 \
             libyaml-cpp-dev
 ```
+``` bash
+orin@ubuntu:~$ sudo apt install ffmpeg
+
+orin@ubuntu:~$ sudo apt install python3-pip
+orin@ubuntu:~$ pip3 install yt-dlp
+orin@ubuntu:~$ which yt-dlp
+/usr/local/bin/yt-dlp
+```
+<b>  2. 환경 준비. 나는 nvidia자료에 있는 sample영상으로 사용했음.
+deepstream_test5폴더를 만들어서 진행
+``` bash
+orin@orin-desktop:~$ mkdir deepstream_test5
+orin@orin-desktop:~/deepstream_test5$ cp /opt/nvidia/deepstream/deepstream-7.1/samples/streams/sample_720p.mp4 .
+```
+cp명령으로 아래와 같이 deepstream_test5에 필요한 내용을 원본에서 복사함.
+
+``` bash
+orin@ubuntu:~/deepstream_test5$ /usr/local/bin/yt-dlp -U
+```
+Latest version: stable@2025.02.19 from yt-dlp/yt-dlp
+yt-dlp is up to date (stable@2025.02.19 from yt-dlp/yt-dlp)
+orin@ubuntu:~/deepstream_test5$ /usr/local/bin/yt-dlp --version
+2025.02.19
+```
+orin@orin-desktop:~/deepstream_test5$ ls
+```
+ config_infer_primary.txt
+ config_infer_secondary_vehiclemake.txt
+ config_infer_secondary_vehicletypes.txt
+ config_tracker_IOU.yml
+ config_tracker_NvDCF_accuracy.yml
+ config_tracker_NvDCF_perf.yml
+ config_tracker_NvDeepSORT.yml
+ config_tracker_NvSORT.yml
+ models
+ out.mp4
+ sample_720p.mp4  # sample stream
+ test5_dec_infer-resnet_tracker_sgie_tiled_display_int8.txt
+ traffic.mp4    #
+orin@ubuntu:~/deepstream_test5$ /usr/local/bin/yt-dlp -f 'bestvideo[height<=720]+bestaudio' https://www.youtube.com/watch?v=DF51C88xJ6E -o street_traffic.mp4
+```
+<b>
+[youtube] Extracting URL: https://www.youtube.com/watch?v=DF51C88xJ6E
+[youtube] DF51C88xJ6E: Downloading webpage
+[youtube] DF51C88xJ6E: Downloading tv client config
+[youtube] DF51C88xJ6E: Downloading player e7567ecf
+[youtube] DF51C88xJ6E: Downloading tv player API JSON
+[youtube] DF51C88xJ6E: Downloading ios player API JSON
+[youtube] DF51C88xJ6E: Downloading m3u8 information
+[info] DF51C88xJ6E: Downloading 1 format(s): 136+140
+[download] Destination: street_traffic.f136.mp4
+[download] 100% of   11.80MiB in 00:00:01 at 7.74MiB/s
+[download] Destination: street_traffic.f140.m4a
+[download] 100% of  734.65KiB in 00:00:02 at 363.00KiB/s
+[Merger] Merging formats into "street_traffic.mp4"
+Deleting original file street_traffic.f136.mp4 (pass -k to keep)
+Deleting original file street_traffic.f140.m4a (pass -k to keep)
+``` bash
+orin@ubuntu:~/deepstream_test5$ ls
+```
+street_traffic.mp4
+
+
