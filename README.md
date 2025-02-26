@@ -1,4 +1,5 @@
 ##### deepstream-7.1
+###### 초보가 작성한 내용임.
 https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinfer.html
 <b> 
 1. deepstream-7.1 설치
@@ -29,7 +30,7 @@ https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinf
             orin@orin-desktop:/opt/nvidia/deepstream/deepstream-7.1$ sudo ldconfig
             
           
-            sudo apt install \
+sudo apt install \
 libssl3 \
 libssl-dev \
 libgstreamer1.0-0 \
