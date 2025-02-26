@@ -106,9 +106,50 @@ orin@ubuntu:~/deepstream_test5$ /usr/local/bin/yt-dlp -f 'bestvideo[height<=720]
 [Merger] Merging formats into "street_traffic.mp4"
 Deleting original file street_traffic.f136.mp4 (pass -k to keep)
 Deleting original file street_traffic.f140.m4a (pass -k to keep)
+ 
 ``` bash
 orin@ubuntu:~/deepstream_test5$ ls
 ```
 street_traffic.mp4
+<b> 3. TensorRT 엔진 만들기
+주의할 점 
+batch-size를 통일해준다. 여기서는 b16으로 해주었다.
+![Screenshot from 2025-02-26 14-30-28](https://github.com/user-attachments/assets/9d79729a-49b5-496b-844f-3c922ad034a9)
+
+
+deepstream_test5/models에 있는 Primary_Detector, Secondary_VehicleMake, Secondary_VehicleType3개를 전부 만들어준다.
+![Screenshot from 2025-02-26 14-34-37](https://github.com/user-attachments/assets/04a255b3-ba08-48cb-8e0e-200e3a4df723)
+![Screenshot from 2025-02-26 14-34-21](https://github.com/user-attachments/assets/d7681eb5-2d09-47e6-a5ac-3af1517719ee)
+![Screenshot from 2025-02-26 14-34-05](https://github.com/user-attachments/assets/5f72939a-4cf6-4d62-9ddf-574118574403)
+
+
+
+```
+orin@orin-desktop:~/deepstream_test5$ /usr/src/tensorrt/bin/trtexec --onnx=/home/orin/deepstream_test5/models/Secondary_VehicleMake/resnet18_vehiclemakenet_pruned.onnx --shapes=input_1:0:16x3x224x224 --saveEngine=/home/orin/deepstream_test5/models/Secondary_VehicleMake/resnet18_vehiclemakenet_pruned.onnx_b16_gpu0_int8.engine --int8 --calib=/home/orin/deepstream_test5/models/Secondary_VehicleMake/cal_trt.bin
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
