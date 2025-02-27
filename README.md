@@ -84,6 +84,8 @@ orin@ubuntu:~/deepstream_test5$ /usr/local/bin/yt-dlp --version
 ``` bash
 orin@orin-desktop:~/deepstream_test5$ ls
 ```
+아래 내요을 다 복사해서 가지고 온다.
+
  config_infer_primary.txt
  
  config_infer_secondary_vehiclemake.txt
