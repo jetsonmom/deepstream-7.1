@@ -85,17 +85,27 @@ orin@ubuntu:~/deepstream_test5$ /usr/local/bin/yt-dlp --version
 orin@orin-desktop:~/deepstream_test5$ ls
 ```
  config_infer_primary.txt
+ 
  config_infer_secondary_vehiclemake.txt
+ 
  config_infer_secondary_vehicletypes.txt
+ 
  config_tracker_IOU.yml
+ 
  config_tracker_NvDCF_accuracy.yml
+ 
  config_tracker_NvDCF_perf.yml
+ 
  config_tracker_NvDeepSORT.yml
+ 
  config_tracker_NvSORT.yml
+ 
  models
- out.mp4
+
  sample_720p.mp4  # sample stream
+ 
  test5_dec_infer-resnet_tracker_sgie_tiled_display_int8.txt
+ 
  traffic.mp4    #
  
  ``` bash
