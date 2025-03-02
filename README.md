@@ -52,6 +52,15 @@ https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinf
             libjansson4 \
             libyaml-cpp-dev
 ```
+
+```bash
+sudo apt update
+sudo apt install deepstream-7.1
+ls -l /opt/nvidia/deepstream/deepstream-7.1/lib/libnvds_meta.so
+```
+damoa@ubuntu:~/projects$ ls -l /opt/nvidia/deepstream/deepstream-7.1/lib/libnvds_meta.so
+-rw-r--r-- 1 root root 30680 Jan  1  1970 /opt/nvidia/deepstream/deepstream-7.1/lib/libnvds_meta.so
+
 ``` bash
 orin@ubuntu:~$ sudo apt install ffmpeg
 
